@@ -12,11 +12,12 @@ import app.k9mail.feature.account.server.validation.ui.ServerValidationContract.
 
 @Suppress("ViewModelForwarding")
 @Composable
-fun ServerValidationScreen(
+internal fun ServerValidationContainerScreen(
     onNext: () -> Unit,
     onBack: () -> Unit,
     viewModel: ViewModel,
     modifier: Modifier = Modifier,
+    content: @Composable (modifier: Modifier) -> Unit,
 ) {
     val (state, dispatch) = viewModel.observe { effect ->
         when (effect) {
@@ -40,9 +41,6 @@ fun ServerValidationScreen(
             modifier = modifier,
         )
     } else {
-        ServerValidationMainScreen(
-            viewModel = viewModel,
-            modifier = modifier,
-        )
+        content(modifier)
     }
 }

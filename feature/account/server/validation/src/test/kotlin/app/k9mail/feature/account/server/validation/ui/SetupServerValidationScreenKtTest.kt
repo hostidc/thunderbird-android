@@ -11,7 +11,7 @@ import assertk.assertions.isEqualTo
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
-class ServerValidationScreenKtTest : ComposeTest() {
+class SetupServerValidationScreenKtTest : ComposeTest() {
 
     @Test
     fun `should delegate navigation effects`() = runTest {
@@ -22,7 +22,7 @@ class ServerValidationScreenKtTest : ComposeTest() {
 
         setContent {
             ThunderbirdTheme {
-                ServerValidationScreen(
+                SetupServerValidationScreen(
                     onNext = { onNextCounter++ },
                     onBack = { onBackCounter++ },
                     viewModel = viewModel,

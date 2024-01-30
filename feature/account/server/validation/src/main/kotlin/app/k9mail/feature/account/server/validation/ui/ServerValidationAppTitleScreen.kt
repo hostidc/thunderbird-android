@@ -17,7 +17,7 @@ import app.k9mail.feature.account.server.validation.ui.fake.FakeIncomingServerVa
 import app.k9mail.feature.account.server.validation.ui.fake.FakeOutgoingServerValidationViewModel
 
 @Composable
-internal fun ServerValidationMainScreen(
+internal fun ServerValidationAppTitleScreen(
     viewModel: ViewModel,
     modifier: Modifier = Modifier,
 ) {
@@ -52,7 +52,7 @@ internal fun ServerValidationMainScreen(
 @PreviewDevices
 internal fun IncomingServerValidationScreenK9Preview() {
     K9Theme {
-        ServerValidationMainScreen(
+        ServerValidationAppTitleScreen(
             viewModel = FakeIncomingServerValidationViewModel(
                 oAuthViewModel = PreviewAccountOAuthViewModel(),
             ),
@@ -64,7 +64,7 @@ internal fun IncomingServerValidationScreenK9Preview() {
 @PreviewDevices
 internal fun IncomingServerValidationScreenThunderbirdPreview() {
     ThunderbirdTheme {
-        ServerValidationMainScreen(
+        ServerValidationAppTitleScreen(
             viewModel = FakeIncomingServerValidationViewModel(
                 oAuthViewModel = PreviewAccountOAuthViewModel(),
             ),
@@ -76,7 +76,7 @@ internal fun IncomingServerValidationScreenThunderbirdPreview() {
 @PreviewDevices
 internal fun AccountOutgoingValidationScreenK9Preview() {
     K9Theme {
-        ServerValidationMainScreen(
+        ServerValidationAppTitleScreen(
             viewModel = FakeOutgoingServerValidationViewModel(
                 oAuthViewModel = PreviewAccountOAuthViewModel(),
             ),
@@ -88,7 +88,7 @@ internal fun AccountOutgoingValidationScreenK9Preview() {
 @PreviewDevices
 internal fun AccountOutgoingValidationScreenThunderbirdPreview() {
     ThunderbirdTheme {
-        ServerValidationMainScreen(
+        ServerValidationAppTitleScreen(
             viewModel = FakeOutgoingServerValidationViewModel(
                 oAuthViewModel = PreviewAccountOAuthViewModel(),
             ),

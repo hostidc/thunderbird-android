@@ -15,7 +15,7 @@ import app.k9mail.feature.account.server.settings.ui.outgoing.OutgoingServerSett
 import app.k9mail.feature.account.server.settings.ui.outgoing.OutgoingServerSettingsViewModel
 import app.k9mail.feature.account.server.validation.ui.IncomingServerValidationViewModel
 import app.k9mail.feature.account.server.validation.ui.OutgoingServerValidationViewModel
-import app.k9mail.feature.account.server.validation.ui.ServerValidationScreen
+import app.k9mail.feature.account.server.validation.ui.SetupServerValidationScreen
 import app.k9mail.feature.account.setup.ui.autodiscovery.AccountAutoDiscoveryScreen
 import app.k9mail.feature.account.setup.ui.autodiscovery.AccountAutoDiscoveryViewModel
 import app.k9mail.feature.account.setup.ui.createaccount.CreateAccountScreen
@@ -80,7 +80,7 @@ fun AccountSetupNavHost(
         }
 
         composable(route = NESTED_NAVIGATION_INCOMING_SERVER_VALIDATION) {
-            ServerValidationScreen(
+            SetupServerValidationScreen(
                 onNext = {
                     if (isAutomaticConfig) {
                         navController.navigate(NESTED_NAVIGATION_OUTGOING_SERVER_VALIDATION) {
@@ -106,7 +106,7 @@ fun AccountSetupNavHost(
         }
 
         composable(route = NESTED_NAVIGATION_OUTGOING_SERVER_VALIDATION) {
-            ServerValidationScreen(
+            SetupServerValidationScreen(
                 onNext = {
                     navController.navigate(
                         if (hasSpecialFolders) {

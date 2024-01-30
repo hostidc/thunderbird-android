@@ -1,6 +1,7 @@
 package app.k9mail.feature.account.edit.ui.server.settings
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -8,9 +9,10 @@ import androidx.navigation.compose.rememberNavController
 import app.k9mail.feature.account.edit.ui.server.settings.modify.ModifyIncomingServerSettingsViewModel
 import app.k9mail.feature.account.edit.ui.server.settings.save.SaveIncomingServerSettingsViewModel
 import app.k9mail.feature.account.edit.ui.server.settings.save.SaveServerSettingsScreen
+import app.k9mail.feature.account.server.settings.R
 import app.k9mail.feature.account.server.settings.ui.incoming.IncomingServerSettingsScreen
 import app.k9mail.feature.account.server.validation.ui.IncomingServerValidationViewModel
-import app.k9mail.feature.account.server.validation.ui.ServerValidationScreen
+import app.k9mail.feature.account.server.validation.ui.SettingsServerValidationScreen
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -48,7 +50,8 @@ fun EditIncomingServerSettingsNavHost(
             )
         }
         composable(route = NESTED_NAVIGATION_ROUTE_VALIDATE) {
-            ServerValidationScreen(
+            SettingsServerValidationScreen(
+                title = stringResource(id = R.string.account_server_settings_incoming_top_bar_title),
                 onBack = { navController.popBackStack() },
                 onNext = { navController.navigateToSave() },
                 viewModel = koinViewModel<IncomingServerValidationViewModel> {
