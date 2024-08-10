@@ -1,7 +1,21 @@
 name: Android CI
 
+# on:
+#   pull_request:
+#     paths-ignore:
+#       - '.idea/**'
+#       - '.gitattributes'
+#       - '.github/**.json'
+#       - '.gitignore'
+#       - '.gitmodules'
+#       - '**.md'
+#       - 'LICENSE'
+#       - 'NOTICE'
+
 on:
-  pull_request:
+  push:
+    branches:
+      - main
     paths-ignore:
       - '.idea/**'
       - '.gitattributes'
@@ -10,7 +24,7 @@ on:
       - '.gitmodules'
       - '**.md'
       - 'LICENSE'
-      - 'NOTICE'
+      - 'NOTICE'      
 
 jobs:
   validation:
@@ -55,4 +69,3 @@ jobs:
       - name: Test
         run: ./gradlew testsOnCi
 
-        
