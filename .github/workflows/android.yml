@@ -54,3 +54,5 @@ jobs:
 
       - name: Test
         run: ./gradlew testsOnCi
+
+        
